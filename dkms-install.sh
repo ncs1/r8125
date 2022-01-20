@@ -12,6 +12,7 @@ DRV_NAME=r8125
 DRV_VERSION=9.007.01
 
 cp -r ${DRV_DIR} /usr/src/${DRV_NAME}-${DRV_VERSION}
+rm -rIf /usr/src/${DRV_NAME}-${DRV_VERSION}/.git*
 
 dkms add -m ${DRV_NAME} -v ${DRV_VERSION}
 dkms build -m ${DRV_NAME} -v ${DRV_VERSION}
