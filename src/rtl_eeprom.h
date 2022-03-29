@@ -33,13 +33,13 @@
  ***********************************************************************************/
 
 //EEPROM opcodes
-#define RTL_EEPROM_READ_OPCODE      06
-#define RTL_EEPROM_WRITE_OPCODE     05
-#define RTL_EEPROM_ERASE_OPCODE     07
-#define RTL_EEPROM_EWEN_OPCODE      19
-#define RTL_EEPROM_EWDS_OPCODE      16
+#define RTL_EEPROM_READ_OPCODE 06
+#define RTL_EEPROM_WRITE_OPCODE 05
+#define RTL_EEPROM_ERASE_OPCODE 07
+#define RTL_EEPROM_EWEN_OPCODE 19
+#define RTL_EEPROM_EWDS_OPCODE 16
 
-#define RTL_CLOCK_RATE  3
+#define RTL_CLOCK_RATE 3
 
 void rtl8125_eeprom_type(struct rtl8125_private *tp);
 void rtl8125_eeprom_cleanup(struct rtl8125_private *tp);
