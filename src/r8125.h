@@ -157,6 +157,10 @@ static inline bool pm_runtime_active(struct device *dev)
 #endif
 #endif
 
+#if LINUX_VERSION_CODE < KERNEL_VERSION(3, 6, 0)
+#define eth_random_addr(addr) random_ether_addr(addr)
+#endif //LINUX_VERSION_CODE < KERNEL_VERSION(3,6,0)
+
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3, 3, 0)
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(3, 0, 0)
 #define netdev_features_t u32
@@ -368,7 +372,7 @@ static inline bool pm_runtime_active(struct device *dev)
 #endif
 
 #define RTL8125_VERSION                                                        \
-	"9.008.00" NAPI_SUFFIX DASH_SUFFIX REALWOW_SUFFIX PTP_SUFFIX RSS_SUFFIX
+	"9.009.00" NAPI_SUFFIX DASH_SUFFIX REALWOW_SUFFIX PTP_SUFFIX RSS_SUFFIX
 #define MODULENAME "r8125"
 #define PFX MODULENAME ": "
 
@@ -2414,7 +2418,7 @@ enum mcfg {
 #define NIC_MAX_PHYS_BUF_COUNT_LSO2 (16 * 4)
 
 #define GTTCPHO_SHIFT 18
-#define GTTCPHO_MAX 0x7fU
+#define GTTCPHO_MAX 0x70U
 #define GTPKTSIZE_MAX 0x3ffffU
 #define TCPHO_SHIFT 18
 #define TCPHO_MAX 0x3ffU
@@ -2435,7 +2439,7 @@ enum mcfg {
 #define NIC_RAMCODE_VERSION_CFG_METHOD_2 (0x0b11)
 #define NIC_RAMCODE_VERSION_CFG_METHOD_3 (0x0b33)
 #define NIC_RAMCODE_VERSION_CFG_METHOD_4 (0x0b17)
-#define NIC_RAMCODE_VERSION_CFG_METHOD_5 (0x0b55)
+#define NIC_RAMCODE_VERSION_CFG_METHOD_5 (0x0b74)
 
 //hwoptimize
 #define HW_PATCH_SOC_LAN (BIT_0)
