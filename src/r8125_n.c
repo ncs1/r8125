@@ -12144,7 +12144,7 @@ static int __devinit rtl8125_init_one(struct pci_dev *pdev,
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 22)
 		dev->hw_features |= NETIF_F_IPV6_CSUM | NETIF_F_TSO6;
 		dev->features |= NETIF_F_IPV6_CSUM;
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,19,0)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 19, 0)
 		netif_set_tso_max_size(dev, LSO_64K);
 		netif_set_tso_max_segs(dev, NIC_MAX_PHYS_BUF_COUNT_LSO2);
 #else //LINUX_VERSION_CODE >= KERNEL_VERSION(5,19,0)
